@@ -2,3 +2,4 @@ url: https://xpnguyen/github.io
 name: Xuan-Phu NGUYEN
 theme: jekyll-theme-slate
 markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
