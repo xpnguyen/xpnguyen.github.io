@@ -1,30 +1,48 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<title>{{ page.title }}</title>
-			<!-- link to main stylesheet -->
-			<link rel="stylesheet" type="text/css" href="/css/main.css">
-		</head>
-		<body>
-			<nav>
-	    		<ul>
-	        		<li><a href="/">Home</a></li>
-		        	<li><a href="/about">About</a></li>
-	        		<li><a href="/cv">CV</a></li>
-	        		<li><a href="/blog">Blog</a></li>
-	    		</ul>
-			</nav>
-			<div class="container">
+<html lang="{{ site.lang | default: "en-US" }}">
+	<head>
+		<title>{{ page.title }}</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset='utf-8'>
+		<meta name="viewport" content="width=device-width,maximum-scale=2">
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		<!-- <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"> -->
+	</head>
 
-			{{ content }}
+	<body>
+		<nav>
+    		<ul>
+        		<li><a href="/">Home</a></li>
+	        	<li><a href="/about">About</a></li>
+        		<li><a href="/cv">CV</a></li>
+        		<li><a href="/blog">Blog</a></li>
+    		</ul>
+		</nav>
 
-      </div><!-- /.container -->
-  		<footer>
-      		<ul>
-          		<li><a href="mailto:phunguyenx@gmail.com">email</a></li>
-          		<li><a href="https://github.com/xpnguyen">github</a></li>
-          		<li><a href="https://www.linkedin.com/in/xuan-phu-nguyen-a5619764">LinkedIn</a></li>
-  			</ul>
-  		</footer>
-  	</body>
-  </html>
+		<div class="container">
+
+		{{ content }}
+
+    </div><!-- /.container -->
+
+		<footer>
+    		<ul>
+        		<li><a href="mailto:phunguyenx@gmail.com">email</a></li>
+        		<li><a href="https://github.com/xpnguyen">github</a></li>
+        		<li><a href="https://www.linkedin.com/in/xuan-phu-nguyen-a5619764">LinkedIn</a></li>
+			</ul>
+		</footer>
+
+		{% if site.google_analytics %}
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', '{{ site.google_analytics }}', 'auto');
+		ga('send', 'pageview');
+		</script>
+		{% endif %}
+	</body>
+</html>
